@@ -9,7 +9,7 @@ using namespace cv;
 float calcNormFactor( const Mat& sum, const Mat& sqSum )
 {
     CV_DbgAssert( sum.cols > 3 && sqSum.rows > 3 );
-    Rect normrect( 1, 1, sum.cols - 3, sum.rows - 3 );
+    Rect normrect( 1, 2, sum.cols - 2, sum.rows - 3 );
     size_t p0, p1, p2, p3;
     CV_SUM_OFFSETS( p0, p1, p2, p3, normrect, sum.step1() )
     double area = normrect.width * normrect.height;
